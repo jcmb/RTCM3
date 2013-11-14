@@ -1,0 +1,11 @@
+NAME: Receiver and Antenna Descriptors
+ID: 1033
+UINT:12:2:Message Number
+UINT:12:3:Reference Station ID
+PCHAR:30:Antenna Descriptor
+UINT:8:31:Antenna Setup ID
+PCHAR:33:Antenna Serial Number
+PCHAR:228:Receiver Type Descriptor
+PCHAR:230:Receiver Firmware Version
+PCHAR:232:Receiver Serial Number
+END:

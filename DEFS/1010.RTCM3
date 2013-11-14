@@ -1,0 +1,10 @@
+NAME: GLONASS Extended RTK, L1
+ID: 1010
+UINT:12:2:Message Number
+UINT:12:3:Reference Station ID
+UINT:27:4:GLONASS Epoch Time
+UINT:1:5:Synchronous GNSS Flag
+REPEAT:5:6:Number GLONASS SV Signals
+UINT:1:7:Divergence-free Smoothing
+UINT:3:8:Smoothing Interval
+END:

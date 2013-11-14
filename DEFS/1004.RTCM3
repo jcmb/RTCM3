@@ -1,0 +1,10 @@
+NAME: GPS Extended RTK, L1 & L2
+ID: 1004
+UINT:12:2:Message Number
+UINT:12:3:Reference Station ID
+UINT:30:4:GPS Epoch Time
+UINT:1:5:Synchronous GNSS Flag
+REPEAT:5:6:Number GPS SV Signals
+UINT:1:7:Divergence-free Smoothing
+UINT:3:8:Smoothing Interval
+END:

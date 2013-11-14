@@ -1,0 +1,9 @@
+NAME: System Parameters
+ID: 1013
+UINT:12:2:Message Number
+UINT:12:3:Reference Station ID
+UINT:16:51:Julian Day
+UINT:17:52:Seconds of Day
+REPEAT:5:53:Number of Announcements
+UINT:8:54:Leap Seconds
+END:

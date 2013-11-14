@@ -1,0 +1,17 @@
+NAME: Stationary Antenna Reference Point, With Height Information
+ID: 1006
+UINT:12:2:Message Number
+UINT:12:3:Reference Station ID
+UINT:6:21:ITRF Year (Reserved)
+UINT:1:22:GPS Indicator
+UINT:1:23:GLONASS Indicator
+UINT:1:24:Galileo Indicator (Reserved)
+UINT:1:141:Reference Station Indicator
+INT:38:25:ECEF-X
+UINT:1:142:Single Receiver Oscillator Indicator
+UINT:1:1:Reserved
+INT:38:26:ECEF-Y
+UINT:2:364:Quarter Cycle Indicator
+INT:38:26:ECEF-Z
+UINT:16:28:Antenna Height
+END:

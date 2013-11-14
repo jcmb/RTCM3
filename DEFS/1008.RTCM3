@@ -1,0 +1,8 @@
+NAME: Antenna Descriptor & Serial Number
+ID: 1008
+UINT:12:2:Message Number
+UINT:12:3:Reference Station ID
+PCHAR:30:Antenna Descriptor
+UINT:8:31:Antenna Setup ID
+PCHAR:33:Antenna Serial Number
+END:
