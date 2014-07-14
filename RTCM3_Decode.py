@@ -54,6 +54,9 @@ Dump_Undecoded = args.Undecoded
 Dump_Decoded = args.Decoded
 Dump_TimeStamp = args.Time
 
+rtcm3=RTCM3.RTCM3(default_output_level=args.Level);
+
+
 if args.Explain:
     print "Dump undecoded: {},  Dump Decoded: {}, Dump TimeStamp: {}".format(
         Dump_Undecoded,
@@ -61,8 +64,36 @@ if args.Explain:
         Print_ACK_NAK,
         Dump_TimeStamp)
 
+if args.None:
+    for id in args.None:
+        if args.Explain:
+            print "Decode Level None: " + hex(int(id,0))
+        rtcm3.Dump_Levels[int(id,0)]=Dump_None
 
-rtcm3=RTCM3.RTCM3(default_output_level=args.Level);
+if args.ID:
+    for id in args.ID:
+        if args.Explain:
+            print "Decode Level ID: " + hex(int(id,0))
+        rtcm3.Dump_Levels[int(id,0)]=Dump_ID
+
+if args.Summary:
+    for id in args.Summary:
+        if args.Explain:
+            print "Decode Level Summary: " + hex(int(id,0))
+        rtcm3.Dump_Levels[int(id,0)]=Dump_Summary
+
+if args.Full:
+    for id in args.Full:
+        if args.Explain:
+            print "Decode Level Full: " + hex(int(id,0))
+        rtcm3.Dump_Levels[int(id,0)]=Dump_Full
+
+if args.Verbose:
+    for id in args.Verbose:
+        if args.Explain:
+            print "Decode Level Verbose: " + hex(int(id,0))
+        rtcm3.Dump_Levels[int(id,0)]=Dump_Verbose
+
 
 
 #input_file=open ('RTCM3.bin','rb')
@@ -85,7 +116,7 @@ while (new_data):
             rtcm3.dump(dump_undecoded=Dump_Undecoded,dump_decoded=Dump_Decoded,dump_timestamp=Dump_TimeStamp);
             sys.stdout.flush()
         else :
-                print "INTERNAL ERROR: Unknown result"
+                print "INTERNAL ERROR: Unknown result (" + str (result) + ")";
                 sys.exit();
 #        print "processing"
         result = rtcm3.process_data ()
