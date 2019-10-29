@@ -178,7 +178,7 @@ class RTCM3:
 
 
         else:
-            sys.stderr.write("No Decoder for {0}\n".format(packet_ID))
+            sys.stderr.write("No Decoder for {0} length {1}\n".format(packet_ID,len(packet_data)))
 
 
     def process_data (self, dump_decoded=False):
@@ -246,13 +246,14 @@ class RTCM3:
             if dump_timestamp :
                print datetime.now()
             if dump_decoded :
-                print "Packet Data: " + ByteToHex (self.packet)
+                print "Packet Data: Length: {0}\n{1}".format(self.packet_Length,ByteToHex (self.packet))
 
             if self.packet_ID in self.commands:
                 print ""
-                print self.commands[self.packet_ID].Command_Name
-                for field in self.commands[self.packet_ID].fields:
-                    print "{0}: {1}".format(field["name"],field["value"])
+                print str(self.packet_ID) + ": " + self.commands[self.packet_ID].Command_Name + " : " + str(self.packet_Length)
+                if self.Dump_Levels [self.packet_ID] > 1 :
+                   for field in self.commands[self.packet_ID].fields:
+                       print "{0}: {1}".format(field["name"],field["value"])
                 print ""
 
 
